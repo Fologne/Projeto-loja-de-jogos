@@ -13,6 +13,17 @@ public class Main{
             escolha = Teclado.LerInteiro("Digite\n1 para cadastrar um jogo\n2 para realizar a venda de um jogo\n3 para exibir os jogos cadastrados\n4 para excluir um jogo\n0 para sair");
             switch(escolha){
                 case 1://cadastro = nao feito
+                    escolha = Teclado.LerInteiro("Digite\n1 para cadastrar um jogo fisico\n2 para cadastrar um jogo digital\n0 para sair");
+                    switch(escolha){
+                        case 1://fisico = nao feito
+                            break;
+                        case 2://digital = nao feito
+                            break;
+                        case 0:
+                            escolha = 1;
+                            System.out.println("Voltando ao menu...");
+                            break;
+                    }
                     break;
                 case 2://venda = nao feito
                     break;
