@@ -1,6 +1,8 @@
 package br.com.gerenciajogos.jogos;
+import br.com.gerenciajogos.utils.Vendavel;
+
 import java.util.ArrayList;
-public class Fisico extends Jogo{
+public class Fisico extends Jogo implements Vendavel{
     private double peso;
     private int estoque;
     //constructor
@@ -22,6 +24,18 @@ public class Fisico extends Jogo{
             return fisicos.get(i).getPreco() * 0.1;
         }else{
             return fisicos.get(i).getPreco() * 0.05;
+        }
+    }
+    @Override
+    public boolean vender(){
+        if (this.estoque > 0){
+            System.out.println("Venda concluída com sucesso");
+            this.estoque--;
+            System.out.println("Estoque: " + getEstoque());
+            return true;
+        }else{
+            System.out.println("Venda negada, estoque igual a 0");
+            return false;
         }
     }
 }

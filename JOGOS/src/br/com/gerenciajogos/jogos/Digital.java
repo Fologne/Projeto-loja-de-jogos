@@ -1,5 +1,6 @@
 package br.com.gerenciajogos.jogos;
-public class Digital extends Jogo{
+import br.com.gerenciajogos.utils.Vendavel;
+public class Digital extends Jogo implements Vendavel{
     private double tamanho;
     private String tipoLinceca;
     //constructor
@@ -15,4 +16,8 @@ public class Digital extends Jogo{
     //getters
     public double getTamanho(){return tamanho;}
     public String getTipoLinceca(){return tipoLinceca;}
+    @Override
+    public boolean vender(){
+        return true;
+    }
 }
