@@ -1,4 +1,5 @@
 package br.com.gerenciajogos.jogos;
+import br.com.gerenciajogos.exceptions.PrecoInvalido;
 public abstract class Jogo{
     private String titulo;
     private String plataforma;
@@ -13,7 +14,12 @@ public abstract class Jogo{
     //setters
     public void setTitulo(String titulo){this.titulo = titulo;}
     public void setPlataforma(String plataforma){this.plataforma = plataforma;}
-    public void setPreco(double preco){this.preco = preco;}
+    public void setPreco(double preco) throws PrecoInvalido{
+        if(preco < 0){
+            throw new PrecoInvalido("O preço não pode ser negativo!");
+        }
+        this.preco = preco;
+    }
     //getters
     public String getTitulo(){return titulo;}
     public String getPlataforma(){return plataforma;}
